@@ -5,7 +5,7 @@ import { FronteggProvider } from '@frontegg/react';
 
 const contextOptions = {
   baseUrl: 'https://app-wl4al73wdngy.frontegg.com',
-  clientId: 'c574f6f0-2bee-400c-9d89-fea3b1e4977e'
+  clientId: '14e08b6f-19c3-47ee-acc3-bd2f8c0319ff'
 };
 
 const authOptions = {
@@ -23,4 +23,3 @@ root.render(
     </FronteggProvider>,
     document.getElementById('root')
 );
-

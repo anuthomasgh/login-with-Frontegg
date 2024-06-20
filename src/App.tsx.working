@@ -1,21 +1,17 @@
 import './App.css';
 // import { useEffect } from 'react';
-import { useAuth, useLoginWithRedirect, ContextHolder, AdminPortal } from "@frontegg/react";
+import { useAuth, useLoginWithRedirect, ContextHolder } from "@frontegg/react";
 
 function App() {
   const { user, isAuthenticated } = useAuth();
   const loginWithRedirect = useLoginWithRedirect();
-const handleClick = () => {
-  AdminPortal.show();
-};
-
 
 //   Uncomment this to redirect to login automatically
 //   useEffect(() => {
 //     if (!isAuthenticated) {
- //      loginWithRedirect();
-  //   }
-   //}, [isAuthenticated, loginWithRedirect]);
+//       loginWithRedirect();
+//     }
+//   }, [isAuthenticated, loginWithRedirect]);
   
   const logout = () => {
    const baseUrl = ContextHolder.getContext().baseUrl;
@@ -27,26 +23,22 @@ const handleClick = () => {
       { isAuthenticated ? (
         <div>
           <div>
-            <img width="100" height="80" src={user?.profilePictureUrl || undefined} alt={user?.name}/>
-<p> </p>
+            <img src={user?.profilePictureUrl || undefined} alt={user?.name}/>
           </div>
           <div>
             <span>Logged in as: {user?.name}</span>
-<p> </p>
           </div>
           <div>
-
-            <button  onClick={() => alert(user?.accessToken)}>What is my access token? &nbsp; </button>
-	    <button  onClick={handleClick}>Settings &nbsp;</button>
-            <button onClick={() => logout()}>Click to logout &nbsp;</button>
-
+            <button onClick={() => alert(user?.accessToken)}>What is my access token?</button>
+          </div>
+          <div>
+            <button onClick={() => logout()}>Click to logout</button>
           </div>
         </div>
       ) : (
         <div>
           <button onClick={() => loginWithRedirect()}>Click here to login</button>
         </div>
-
       )}
     </div>
   );

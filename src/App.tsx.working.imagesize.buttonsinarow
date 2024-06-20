@@ -13,9 +13,9 @@ const handleClick = () => {
 //   Uncomment this to redirect to login automatically
 //   useEffect(() => {
 //     if (!isAuthenticated) {
- //      loginWithRedirect();
-  //   }
-   //}, [isAuthenticated, loginWithRedirect]);
+//       loginWithRedirect();
+//     }
+//   }, [isAuthenticated, loginWithRedirect]);
   
   const logout = () => {
    const baseUrl = ContextHolder.getContext().baseUrl;
@@ -35,10 +35,9 @@ const handleClick = () => {
 <p> </p>
           </div>
           <div>
-
-            <button  onClick={() => alert(user?.accessToken)}>What is my access token? &nbsp; </button>
-	    <button  onClick={handleClick}>Settings &nbsp;</button>
-            <button onClick={() => logout()}>Click to logout &nbsp;</button>
+            <button onClick={() => alert(user?.accessToken)}>What is my access token? </button>
+	    <button onClick={handleClick}>Settings</button>
+            <button onClick={() => logout()}>Click to logout</button>
 
           </div>
         </div>
